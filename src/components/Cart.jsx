@@ -19,6 +19,7 @@ function Cart() {
     Swal.fire({
       title: "Item removed from your cart!",
       icon: "error",
+      confirmButtonColor: "#292524",
     });
   };
 

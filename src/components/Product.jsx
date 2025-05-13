@@ -27,7 +27,7 @@ function Product() {
   }, [productId]);
 
   return (
-    <div className="p-20 min-h-screen">
+    <div className="p-20 min-h-screen w-300">
       {loading ? (
         <p>LOADING...</p>
       ) : product ? (

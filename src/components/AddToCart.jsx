@@ -6,10 +6,10 @@ function AddToCart({ product }) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
-    // alert("Added to your cart!");
     Swal.fire({
       title: "Item added to your cart!",
       icon: "success",
+      confirmButtonColor: "#292524",
     });
   };
 

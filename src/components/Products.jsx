@@ -34,20 +34,20 @@ function Products() {
       ) : (
         <div className="grid grid-cols-3 gap-20">
           {products.map((product) => (
-            <div key={product.id} className="">
+            <div key={product.id} className="w-95 h-120 flex flex-col justify-between mb-10">
               <h3 className="text-lg font-bold">{product.title}</h3>
               <p className="text-sm mb-5 flex items-center gap-1">
                 <PiListStar />
                 {product.rating.rate} / 5 by {product.rating.count} Reviews
               </p>
-              <NavLink to={`/products/${product.id}`}>
+              <NavLink to={`/products/${product.id}`} className="flex items-center justify-center">
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-50 mb-5"
+                  className="h-50 mb-5"
                 />
               </NavLink>
-              <p>{product.description}</p>
+              <p>{product.description.length > 100 ? `${product.description.substring(0, 100)}...` : `${product.description}`}</p>
               <div className="flex justify-between items-center mt-5">
                 <p className="font-bold">{product.price} €</p>
                 <AddToCart product={product} />
